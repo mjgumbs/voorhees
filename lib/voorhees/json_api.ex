@@ -393,7 +393,7 @@ defmodule Voorhees.JSONApi do
     do: apply(Ecto.DateTime, :to_iso8601, [value])
   defp format(%{__struct__: Ecto.Time} = value),
     do: apply(Ecto.Time, :to_iso8601, [value])
-  defp form(%{__struct__: Ecto.Date} = value),
+  defp format(%{__struct__: Ecto.Date} = value),
     do: apply(Ecto.Date, :to_string, [value])
   defp format(value), do: value
 
