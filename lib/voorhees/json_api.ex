@@ -431,9 +431,12 @@ defmodule Voorhees.JSONApi do
       |> Module.split()
       |> List.last()
       |> Mix.Utils.underscore()
+      |> dasherize
 
     opts[:type] || default
   end
+
+  defp dasherize(data), do:  String.replace(data, "_", "-")
 
   defp atomize(value) when is_binary(value),
     do: String.to_atom(value)
